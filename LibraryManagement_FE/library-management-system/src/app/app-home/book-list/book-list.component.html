@@ -1,0 +1,28 @@
+<div *ngFor="let book of bookList; let i = index" fxFlex="100" class="cursor-pointer">
+    <div class="mb-32">
+        <mat-card class="border-DFDFE1 mr-20 ml-20">
+            <mat-card-title-group class="display-inline">
+                <mat-card-title>
+                    <div fxLayout="row">
+                        <div fxFlex="75" class="color_primary font-weight-600 roboto font-normal">
+                            {{book.BookName}}
+                        </div>
+                    </div>
+                </mat-card-title>
+            </mat-card-title-group>
+            <mat-card-content >
+                <img mat-card-image src="{{book.ImageUrl}}" alt="">
+                <mat-card-subtitle>
+                    <div fxLayout="row" fxLayoutGap="16px">
+                        <div fxFlex="60" class="border-right-DCDCDD">
+                            <div class="subtitle-2 text-color-46494C mb-8">{{book.Price}}</div>
+                        </div>
+                        <div fxFlex="40">
+                            <div class="subtitle-2 text-color-46494C mb-8">{{book.Quantity}}</div>
+                        </div>
+                    </div>
+                </mat-card-subtitle>
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>

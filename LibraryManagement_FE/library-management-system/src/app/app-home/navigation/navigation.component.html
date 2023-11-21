@@ -1,0 +1,39 @@
+<mat-toolbar fxLayout="row" class="toolbar-header-bg-FFFFFF h-48">
+    <div fxFlex="25" class="toolbar-header-left">
+        <span>
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="p-0 m-0  font-size-14 font-weight-500">
+                Library Management System
+            </span>
+        </span>
+    </div>
+    <div fxFlex="75">
+        <div fxLayout="row" fxLayoutAlign="end none"> 
+            <div class="toolbar-separator"></div>
+            <div class="toolbar-header-right-logo">
+                <a class="logo" href="http://ambergloglay.com/">
+                    <img src="assets/images/dgis_logo.png" class="toolbar-horizontal-logo" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
+<div style="height: 100%;">
+    <mat-sidenav-container fxFlexFill>
+      <mat-sidenav #sidenav class="w-250">
+        <mat-nav-list>
+          <a href="home/books" mat-list-item>Book List</a>
+          <a href="#" mat-list-item>Order Details</a>
+          <a href="#" mat-list-item>Transations</a>
+          <a href="#" mat-list-item>Menu Item 4</a>
+          <a href="#" mat-list-item>Menu Item 5</a>
+          <a href="#"mat-list-item>Menu Item 6</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
