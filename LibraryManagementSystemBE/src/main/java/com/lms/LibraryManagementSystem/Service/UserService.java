@@ -11,21 +11,21 @@ import java.util.*;
 @Service
 public class UserService implements IUserService {
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository _userRepository;
 
     @Override
     public User saveUser(User user) {
-        return userRepository.save(user);
+        return _userRepository.save(user);
     }
 
     @Override
     public List<User> getUserList() {
-        return userRepository.findAll().stream().toList();
+        return _userRepository.findAll();
     }
 
     @Override
     public void deleteUserById(Long userId) {
-        userRepository.deleteById(userId);
+        _userRepository.deleteById(userId);
     }
 
     @Override
@@ -34,18 +34,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User fetchUserByName(String userName) {
+    public User getUserByName(String userName){
         return null;
+        //return _userRepository.findByName(userName);
     }
-    /*@Override
-    public User fetchUserById(Long userId) throws UserNotFoundException {
-        Optional<User> department =
-                userRepositoryRepository.findById(userId);
-
-        if(!department.isPresent()) {
-            throw new UserNotFoundException("Department Not Available");
-        }
-
-        return  department.get();
-    }*/
 }

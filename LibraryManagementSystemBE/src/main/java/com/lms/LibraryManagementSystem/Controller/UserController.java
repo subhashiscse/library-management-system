@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@RequestMapping("/api/v1")
 public class UserController {
     @Autowired
     UserService _userService;
@@ -28,5 +29,9 @@ public class UserController {
     @GetMapping("/getUsers")
     public List<User> getUserList(){
         return _userService.getUserList();
+    }
+    @GetMapping()
+    public User getUserList(String userName){
+        return _userService.getUserByName(userName);
     }
 }
